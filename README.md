@@ -16,7 +16,6 @@ Este es un proyecto web desarrollado con Django para la gestión de productos, c
    - Agregar clientes con información como nombre, correo y comercio asociado.
    - Editar los datos de los clientes.
    - Eliminar clientes de la base de datos.
-   - Buscar clientes por nombre.
    - Ver la información detallada del cliente.
 
 3. **Gestión de Comercios:**
