@@ -28,4 +28,4 @@ Este es un proyecto web desarrollado con Django para la gestión de productos, c
 
 4. **Interfaz de Usuario:**
    - Utiliza botones de acción para realizar operaciones como agregar, editar y eliminar.
-   - Incluye un formulario de búsqueda para encontrar productos, clientes y comercios rápidamente.
+   - Incluye un formulario de búsqueda para encontrar productos
