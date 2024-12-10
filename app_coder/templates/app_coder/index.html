@@ -1,0 +1,42 @@
+{% extends 'app_coder/base.html' %}
+{% load static %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 { color: #34495e; margin-top: 20px; }
+        .container { margin-top: 50px; }
+        a {
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        a:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido al sistema</h1>
+    <div class="container">
+        <a href="{% url 'clientes' %}">Clientes</a>
+        <a href="{% url 'comercios' %}">Comercios</a>
+        <a href="{% url 'productos' %}">Productos</a>
+    </div>
+</body>
+</html>
+{% endblock %}

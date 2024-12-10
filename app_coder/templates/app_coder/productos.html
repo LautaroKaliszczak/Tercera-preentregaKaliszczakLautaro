@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f7f9fc; }
+        h1 { color: #3498db; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 10px; border: 1px solid #ddd; }
+        th { background-color: #2980b9; color: #fff; }
+        .btn { padding: 8px 12px; margin: 5px; text-decoration: none; color: white; border-radius: 5px; }
+        .btn-agregar { background-color: #1abc9c; }
+        .btn-editar { background-color: #f39c12; }
+        .btn-eliminar { background-color: #e74c3c; }
+        .btn-ver-info { background-color: #3498db; }
+    </style>
+</head>
+<body>
+  <div class="d-flex flex-column align-items-center mb-2">
+    <form class="d-flex" action="" method="GET">
+      <input class="form-control me-4" type="text" name="q" placeholder="Buscar..." value="{{ request.GET.q }}">
+      <button class="btn btn-secondary" type="submit">Buscar</button>
+    </form>
+  </div>
+    <h1>Productos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.stock }}</td>
+                <td>
+                    <a href="{% url 'editar_producto' producto.pk %}" class="btn btn-editar">Editar</a>
+                    <a href="{% url 'eliminar_producto' producto.pk %}" class="btn btn-eliminar">Eliminar</a>
+                    <a href="{% url 'ver_info_producto' producto.pk %}" class="btn btn-ver-info">Ver Info</a>
+                </td>
+            </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No se encontraron productos.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="container my-4">
+      <a class="btn btn-primary" href="{% url 'producto-formulario' %}">Agregar Producto</a>
+    </div>
+</body>
+<a class="btn btn-primary" href="{% url 'inicio' %}">Volver</a>
+</ht

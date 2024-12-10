@@ -1,0 +1,26 @@
+{% extends 'app_coder/base.html' %}
+
+{% block content %}
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-4">
+
+            <h1 class="text-center">Crear Comercio</h1>
+            <p class="text-center fw-bold fst-italic">Debes completar todos los datos.</p>
+
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="d-flex justify-content-around">
+            <button type="submit" class="btn btn-primary">Crear Comercio</button>
+            <a class="btn btn-secondary" href="{% url 'comercios' %}">Volver</a>
+        </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'app_coder/base.html' %}
+
+{% block title %}Descripción del Producto{% endblock %}
+
+{% block content %}
+<h1>{{ producto.nombre }}</h1>
+<p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+<p><strong>Precio:</strong> {{ producto.precio }}</p>
+<p><strong>Stock:</strong> {{ producto.stock }}</p>
+<a href="{% url 'productos' %}" style="background: #3498db; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">Volver a Productos</a>
+{% endblock %}

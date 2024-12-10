@@ -1,0 +1,12 @@
+{% extends 'app_coder/base.html' %}
+
+{% block title %}Editar Comercio{% endblock %}
+
+{% block content %}
+<h1>Editar Comercio</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" style="background: #3498db; color: white; padding: 10px; border: none; border-radius: 5px;">Guardar</button>
+</form>
+{% endblock %}
